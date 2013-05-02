@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    <link rel="stylesheet" type="text/css" href="/static/topcoat/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/static/topcoat/css/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="/static/topcoat/css/topcoat-desktop.css">
+	<link href="/static/jquery.fancybox.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+	<script src="/static/jquery-1.9.1.min.js"></script>
+	<script src="/static/handlebars.js"></script>
+	<script src="/static/jquery.fancybox.js"></script>	
+	<script src="/static/main.js"></script>
+	</head>
+	
+	<body>
+
+		<div id="container">
+			<header>
+			<hgroup>
+				<h1>Edge Inspect Screenshot Viewer</h1>
+				<h2>by Raymond Camden</h2>
+			</hgroup>
+			<nav>
+				<h3>General</h3>
+				<ul>
+					<li><a href="" class="nofilter">All Shots</a></li>
+					<li><a href="" data-os="iOS" class="osfilter">iOS</a></li>
+					<li><a href="" data-os="Android" class="osfilter">Android</a></li>
+				</ul>
+				<h3>Devices</h3>
+				<ul id="deviceList">
+				</ul>
+			</nav>
+			</header>
+			<div id="main" role="main" class="bg-light">
+				<section id="general" >
+					
+					<div id="results"></div>
+
+
+				</section>
+			</div>
+		</div>
+	
+		<script id="shotTemplate" type="text/x-handlebars-template">
+	{{#each requests}}
+		<h4>{{url}} ({{fDate date}})</h4>
+			{{#each shots}}
+				<div class="thumbnail">
+				<a href="/display/{{url}}"  class="fancybox" title="{{name}}"><img src="/display/{{url}}"></a>
+				<p>{{data.device_model}}</p>
+				</div>
+			{{/each}}
+			<div style="clear:left"></div>
+	{{/each}}
+	</script>
+		
+	</body>
+</html>

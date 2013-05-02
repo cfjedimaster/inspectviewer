@@ -1,0 +1,19 @@
+.thumbnail {
+	float: left;
+	width: 250px;
+	margin-right: 10px;
+}
+
+.thumbnail img {
+	height:250px;
+	max-height:250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	overflow:hidden;
+		
+}
+
+.thumbnail p {
+	text-align: center;	
+}
