@@ -88,5 +88,5 @@ function renderData() {
 	
 Handlebars.registerHelper('fDate', function(d) {
 	var date = new Date(d);
-	return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear() + ' @ ' + (date.getHours()+1) + ':' + (date.getMinutes()+1) + ' ' + (date.getHours()>11?'pm':'am');
+	return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear() + ' @ ' + (date.getHours()+1) + ':' + (date.getMinutes()>10?date.getMinutes()+1:"0" + date.getMinutes()) + ' ' + (date.getHours()>11?'pm':'am');
 });

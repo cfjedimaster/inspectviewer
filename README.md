@@ -12,4 +12,6 @@ This will create a server at your specified port to let you browse your screen s
 
 Release History
 ===============
+[5/7/2013] V1.100001 Date format fix.
+
 [5/2/2013] V1.1 Initial GitHub release.
