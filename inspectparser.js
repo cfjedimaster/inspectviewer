@@ -138,9 +138,11 @@ exports.getData = function(path,cb) {
 			result.sort(function(x,y) {
 				var xD = new Date(x.date);
 				var yD = new Date(y.date);
-				return xD.getTime() < yD.getTime();
+				if(xD.getTime() < yD.getTime()) return 1;
+				if(xD.getTime() > yD.getTime()) return -1;
+				return 0;
 			});
-			
+
 			cb(result);
 		});
 	});
